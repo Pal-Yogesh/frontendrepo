@@ -17,7 +17,7 @@ export default function Tasks() {
 
   const fetchTasks = async () => {
     try {
-      const res = await fetch("http://localhost:5001/tasks", {
+      const res = await fetch("https://taskbackend-xmwy.onrender.com/tasks", {
         method: "GET",
         credentials: "include",
         headers: { "Content-Type": "application/json" },

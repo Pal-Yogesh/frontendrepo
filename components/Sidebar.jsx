@@ -22,7 +22,7 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
 
   const handleLogout = async () => {
     try {
-      const res = await fetch("http://localhost:5001/auth/logout", {
+      const res = await fetch("https://taskbackend-xmwy.onrender.com/auth/logout", {
         method: "POST",
         credentials: "include",
       });

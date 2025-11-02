@@ -54,7 +54,7 @@ export function TaskProvider({ children }) {
 
   const fetchTasks = useCallback(async () => {
     try {
-      const data = await api("http://localhost:5001/tasks");
+      const data = await api("https://taskbackend-xmwy.onrender.com/tasks");
       setTasks(Array.isArray(data) ? data : data.tasks || []);
     } catch (e) {
       console.error(e);
@@ -63,7 +63,7 @@ export function TaskProvider({ children }) {
 
   const fetchUsers = useCallback(async () => {
     try {
-      const data = await api("http://localhost:5001/users");
+      const data = await api("https://taskbackend-xmwy.onrender.com/users");
       setUsers(Array.isArray(data) ? data : []);
     } catch (e) {
       console.error(e);
@@ -72,7 +72,7 @@ export function TaskProvider({ children }) {
 
   const fetchCurrentUser = useCallback(async () => {
     try {
-      const data = await api("http://localhost:5001/auth/profile");
+      const data = await api("https://taskbackend-xmwy.onrender.com/auth/profile");
       setCurrentUser(data);
     } catch (e) {
       console.error(e);
@@ -89,7 +89,7 @@ export function TaskProvider({ children }) {
   // ── Create task ──────────────────────────────────────────────────────
   const createTask = useCallback(
     async (payload) => {
-      const newTask = await api("http://localhost:5001/tasks", {
+      const newTask = await api("https://taskbackend-xmwy.onrender.com/tasks", {
         method: "POST",
         body: JSON.stringify(payload),
       });
@@ -102,7 +102,7 @@ export function TaskProvider({ children }) {
   // ── Update task ──────────────────────────────────────────────────────
   const updateTask = useCallback(
     async (id, payload) => {
-      const updated = await api(`http://localhost:5001/tasks/${id}`, {
+      const updated = await api(`https://taskbackend-xmwy.onrender.com/tasks/${id}`, {
         method: "PUT",
         body: JSON.stringify(payload),
       });
@@ -115,7 +115,7 @@ export function TaskProvider({ children }) {
   // ── Delete task ──────────────────────────────────────────────────────
   const deleteTask = useCallback(
     async (id) => {
-      await api(`http://localhost:5001/tasks/${id}`, { method: "DELETE" });
+      await api(`https://taskbackend-xmwy.onrender.com/tasks/${id}`, { method: "DELETE" });
       setTasks((prev) => prev.filter((t) => t._id !== id));
     },
     [api]
