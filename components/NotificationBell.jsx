@@ -20,7 +20,7 @@ export default function NotificationBell({ onNewTask }) {
   useEffect(() => {
     if (!userId) return;
 
-    socketRef.current = io("https://taskbackend-xmwy.onrender.com", {
+    socketRef.current = io("https://backendrepo-wpmj.onrender.com", {
       query: { userId },
       transports: ["websocket"],
       withCredentials: true,
