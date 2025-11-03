@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Home, CheckSquare, LogOut, X, UserRoundPlus } from "lucide-react";
+import { Home, CheckSquare, LogOut, X, UserRoundPlus, Users } from "lucide-react";
 import Link from "next/link";
 
 export default function Sidebar({ isOpen, toggleSidebar }) {
@@ -22,7 +22,7 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
 
   const handleLogout = async () => {
     try {
-      const res = await fetch("https://backendrepo-wpmj.onrender.com/auth/logout", {
+      const res = await fetch("https://backendrepo-wpmj.onrender.com//auth/logout", {
         method: "POST",
         credentials: "include",
       });
@@ -53,6 +53,13 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
       href: "/create-user",
       label: "Create Users",
       icon: <UserRoundPlus className="w-5 h-5" />,
+    });
+  }
+  if (userRole === "admin") {
+    menuItems.push({
+      href: "/all-users",
+      label: "All Users",
+      icon: <Users className="w-5 h-5" />,
     });
   }
 
