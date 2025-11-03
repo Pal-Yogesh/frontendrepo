@@ -70,12 +70,12 @@ export default function Login() {
           Login
         </button>
 
-           <p
+           {/* <p
           onClick={() => router.push("/register")}
           className="text-sm text-center mt-3 text-blue-600 cursor-pointer hover:underline"
         >
           Don't have an account? Register
-        </p>
+        </p> */}
       </form>
     </div>
   );
