@@ -17,7 +17,7 @@ export default function Tasks() {
 
   const fetchTasks = async () => {
     try {
-      const res = await fetch("https://backendrepo-wpmj.onrender.com//tasks", {
+      const res = await fetch("https://backendrepo-wpmj.onrender.com/tasks", {
         method: "GET",
         credentials: "include",
         headers: { "Content-Type": "application/json" },

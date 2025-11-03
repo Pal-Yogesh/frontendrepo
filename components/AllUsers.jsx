@@ -10,7 +10,7 @@ const AllUsers = () => {
 
 
 
-  
+
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -20,7 +20,7 @@ const AllUsers = () => {
       setLoading(true);
       setError(null);
       
-      const res = await fetch("https://backendrepo-wpmj.onrender.com//users/all", {
+      const res = await fetch("https://backendrepo-wpmj.onrender.com/users/all", {
         method: "GET",
         credentials: "include",
         headers: {

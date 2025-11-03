@@ -70,7 +70,7 @@ export default function TaskForm({ onTaskCreated }) {
             : currentUser?._id, 
       };
 
-      const res = await fetch("https://backendrepo-wpmj.onrender.com//tasks", {
+      const res = await fetch("https://backendrepo-wpmj.onrender.com/tasks", {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },

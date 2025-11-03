@@ -26,7 +26,7 @@ export default function AdminCreateUser() {
 
     try {
       const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL || "https://backendrepo-wpmj.onrender.com/"}/users/create`,
+        `${process.env.NEXT_PUBLIC_API_URL || "https://backendrepo-wpmj.onrender.com"}/users/create`,
         formData,
         { withCredentials: true }
       );
